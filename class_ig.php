@@ -438,8 +438,8 @@ function follow($username, $session)
                     'username' => $username,
                     'action' => 'follow',
                     'status' => 'error',
-                    'details' => $b." | Throttled! Resting during 12 hours before try again.",
-                    'sleep' => 43200,
+                    'details' => $b." | Throttled! Resting during 5 min before try again.",
+                    'sleep' => 250,
                 );
             }
         }
