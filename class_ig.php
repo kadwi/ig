@@ -438,8 +438,8 @@ function follow($username, $session)
                     'username' => $username,
                     'action' => 'follow',
                     'status' => 'error',
-                    'details' => $b." | Throttled! Resting during 12 hours before try again.",
-                    'sleep' => 43200,
+                    'details' => $b." | Throttled! Resting during 10 min before try again.",
+                    'sleep' => 600,
                 );
             }
         }
@@ -983,3 +983,13 @@ function onetap($session)
             );
     return $data;
 }
+->node->shortcode,
+                'text' => $items->node->edge_media_to_caption->edges[0]->node->text
+			);
+			}
+    return $data_ouput;
+}
+
+function onetap($session)
+{
+        $url = 'https://www.instagram.com/accounts/onetap/?next=
