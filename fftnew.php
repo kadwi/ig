@@ -59,15 +59,15 @@ if ($login['status'] == 'success') {
 					if ($data_follow['status'] == 'success') {
 
 						echo color()["LG"]."Follow Success | ";
-						$sleep = 300;
+						$sleep = 30;
 						sleep(30);
 						$id_post = $post['id'];
 
 						$like = like($id_post, $data_login);
 						if ($like['status'] == 'error') {
 							
-							echo color()["LR"]."Error Like :( | Throttled! Resting during 10 minutes before try again." . PHP_EOL;
-						sleep(10*60);		
+							echo color()["LR"]."Error Like :( | Throttled! Resting during 2 minutes before try again." . PHP_EOL;
+						sleep(2*60);		
 						}else{
 							echo color()["LG"]."Like Success | ";
 							sleep(30);
@@ -79,11 +79,11 @@ if ($login['status'] == 'success') {
 								
 								$cmt = $cmt+1;
 								echo color()["LG"]."[ $cmt ] Comment Success: " . color()['MG'].$comment['text'] . color()['CY']." ".PHP_EOL;
-								$sleep = $sleep + 300;
+								$sleep = $sleep + 30;
 								sleep(30);
 							}else{
-								echo color()["LR"]."Error comment :( Throttled! Resting during 10 minutes before try again.| ";
-								sleep(10*60);		
+								echo color()["LR"]."Error comment :( Throttled! Resting during 2 minutes before try again.| ";
+								sleep(2*60);		
 								$unfollow = unfollow($username,$data_login);
 								if ($unfollow['status'] == 'success') {
 									
